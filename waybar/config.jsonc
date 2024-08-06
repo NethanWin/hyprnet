@@ -1,0 +1,163 @@
+{
+    "layer": "top",
+    "position": "top",
+    "spacing": 0,
+    "modules-left": [
+        "hyprland/workspaces"
+    ],
+    "modules-center": [
+        "clock",
+        "clock#date"
+    ],
+    "modules-right": [
+        "tray",
+        "memory",
+        "cpu",
+        "network",
+        "pulseaudio",
+        "battery",
+    ],
+    "wlr/taskbar": {
+        "format": "{icon}",
+        "on-click": "activate",
+        "on-click-right": "fullscreen",
+        "icon-theme": "WhiteSur",
+        "icon-size": 25,
+        "tooltip-format": "{title}"
+    },
+    "hyprland/workspaces": {
+        "on-click": "activate",
+        "format": "{icon}",
+        "format-icons": {
+            //"default": "",
+            "1": "1",
+            "2": "2",
+            "3": "3",
+            "4": "4",
+            "5": "5",
+            "6": "6",
+            "7": "7",
+            "8": "8",
+            "9": "9",
+            "10": "10",
+            //"active": "󱓻",
+            //"urgent": "󱓻"
+            //"persistent": {
+            //  "style": "underline"
+            //}
+        }
+    },
+    "cpu": {
+        "interval": 5,
+        "format": "󰍛 {}",
+        "max-length": 10
+    },
+    "tray": {
+        "icon-size": 22,
+        "spacing": 10
+        
+    },
+    "clock": {
+        "format": " {:%H:%M}"
+    },
+    "clock#date": {
+        "tooltip-format": "{calendar}",
+        "format": " {:%d/%m %a}"
+    },//  
+    "network": {
+        "format-wifi" : "{icon}",
+        "format-icons": ["󰤯","󰤟","󰤢","󰤥","󰤨"],
+        "format-ethernet": "󱘖",
+	"format-alt" : "󱛇",
+        "format-disconnected" : "󰖪",
+	"tooltip-format-wifi": "{icon} {essid}\n⇣{bandwidthDownBytes}  ⇡{bandwidthUpBytes}",
+        "tooltip-format-ethernet": "󰀂  {ifname}\n⇣{bandwidthDownBytes}  ⇡{bandwidthUpBytes}",
+	"tooltip-format-disconnected": "Disconnected",
+	//"on-click": "~/.config/rofi/wifi/wifi.sh &",
+  //      "on-click-right": "~/.config/rofi/wifi/wifinew.sh &",
+	"interval": 5,
+	"nospacing": 1,
+    },
+
+    "pulseaudio": {
+        "format": "{volume} {icon}  {format_source}",
+        "format-bluetooth": "{volume} {icon} {format_source}",
+        "nospacing": 1,
+        "tooltip-format": "Volume : {volume}",
+        "format-muted": "  {format_source}",
+    //          big icons
+    //󰝟 󰕾 󰕿 󰖀 󰝟 󰖁 󰸈   small icons
+
+        "format-source": "{volume}% ",
+        "format-source-muted": "",
+        "format-icons": {
+            "headphone": "",
+            "default": ["","",""]
+            //"default": ["󰖀","󰕾",""]
+        },
+        "on-click": "pamixer -t",
+        "scroll-step": 1
+    },
+    "memory": {
+      "interval": 2,
+      "format": " {used:0.1f}G",
+      "max-length": 10
+    },
+    "custom/custom-battery-eta": {
+      "exec": "~/.config/waybar/custom/battery-eta",
+      "restart-interval": 5
+    },
+
+    "battery": {
+        "return-type": "json",
+        "format": "{icon} {capacity}%",
+        "format-time": "{H}h {M}min",
+        "format-icons": {
+            "charging": [
+                "󰢜",
+                "󰂆",
+                "󰂇",
+                "󰂈",
+                "󰢝",
+                "󰂉",
+                "󰢞",
+                "󰂊",
+                "󰂋",
+                "󰂅"
+            ],
+            "default": [
+                "󰁺",
+                "󰁻",
+                "󰁼",
+                "󰁽",
+                "󰁾",
+                "󰁿",
+                "󰂀",
+                "󰂁",
+                "󰂂",
+                "󰁹"
+            ]
+        },
+        "format-full": "Charged ",
+        "interval": 5,
+        "states": {
+            "warning": 20,
+            "critical": 10
+        },
+        "tooltip": true
+    },
+    "battery#bat0": {
+        "bat": "ADP1",
+        "interval": 60,
+        "format": "{time}",
+        "format-icons": ["","","",""]
+        },
+        "format-full": "Charged ",
+        "interval": 5,
+        "states": {
+            "warning": 20,
+            "critical": 10
+        },
+        "tooltip": true
+    }
+}

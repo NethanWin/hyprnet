@@ -1,0 +1,8 @@
+
+#!/bin/bash
+
+# Your custom shell command here
+custom_output=$(upower -i /org/freedesktop/UPower/devices/battery_BAT0 | grep -E "energy:|energy-rate" | awk '{print $2}' | awk 'BEGIN {getline num1;getline num2; if(num2 != 0) {print(num1/num2)}}'
+)
+# Print the output in Waybar format
+echo $custom_output
