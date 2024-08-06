@@ -1,4 +1,4 @@
-sudo pacman -S hyprland waybar hyprpaper hyprlock wofi -y
+sudo pacman -S hyprland waybar hyprpaper hyprlock wofi ttf-jetbrains-mono-nerd -y
 
 cp -r ./waybar ~/.config/
 cp -r ./hypr/ ~/.config/
