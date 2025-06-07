@@ -1,12 +1,12 @@
-sudo pacman -S --noconfirm --needed hyprland waybar hyprpaper hyprlock wofi ttf-jetbrains-mono-nerd -y
+# installing required pkgs
+sudo pacman -Syu --noconfirm
+sudo pacman -S --noconfirm --needed $(cat pkgs)
 
+# copy configs
 cp -r ./waybar ~/.config/
 cp -r ./hypr/ ~/.config/
 
+# wallpaper and create screenshots' path
 mkdir -p ~/pictures/wallpapers
 cp ./wallpapers/laputa.jpg ~/pictures/wallpapers/
-
-#install jetbrains mono nerd font
-
-sudo pacman -S --noconfirm --needed konsole qutebrowser grim slurp brightnessctl dolphin syncthing -y
 mkdir -p ~/pictures/Screenshots
